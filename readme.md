@@ -1,4 +1,4 @@
-# Projet API 
+# This website helps you to improve your typing skills
 
 ## Installation
 Lancer 
