@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% include 'head.html' %}
+
+</head>
+<body class="bg-bg font-jakarta">
+
+    <div class="min-h-screen w-full flex items-center justify-center">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% block scripts %}{% endblock %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.1/cdn.js" integrity="sha512-bQOI1eWRadC7HPMMU7NUi5Ha3tAgxZi32t/6u2OfKyUpSWyITCxxia5GA2xsXtGcd6tiSWqMYvr8sJhU46D9Ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

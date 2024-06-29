@@ -1,0 +1,39 @@
+{% extends "base_center.html" %}
+
+{% block content %}
+
+
+<form method="POST">
+  <div class="space-y-12 w-96">
+
+    <div class="border-b border-gray-900/10">
+      <h1 class="text-4xl font-medium leading-7 text-gray-900">Inscription</h1>
+
+      <div class="flex flex-col space-y-6 mt-10">
+        <div>
+          <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Nom d'utilisateur</label>
+          <div>
+            <input type="text" name="username" id="username" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          </div>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Mot de passe</label>
+          <div>
+            <input id="password" name="password" type="password" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          </div>
+        </div>
+
+    </div>
+
+  </div>
+
+  <div class="mt-6 flex items-center justify-end gap-x-6">
+    <div class="text-gray-400 text-sm w-full flex underline italic justify-end items-end">
+      <a href="{{ url_for('template.login') }}">Se connecter</a>
+  </div>
+    <button type="submit" class="rounded-md bg-darker px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-900 transition duration-100">Inscription</button>
+  </div>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,49 @@
+{%extends 'base.html' %}
+
+
+{% block content%}
+
+<h1 class="text-4xl font-medium leading-7 text-gray-900 mb-16">Historique</h1>
+<div class="grid grid-cols-2 gap-16">
+    <div>
+        <h2 class="text-2xl leading-7 text-gray-900 mb-8">Parties récentes</h2>
+        <div class="flex flex-col space-y-4">
+            {% for item in history %}
+                <div class="flex flex-row justify-between items-center p-6 rounded-lg bg-gray-100">
+                    <div class="font-medium text-lg">
+                        {{ item.date.strftime('%d/%m/%Y à %H:%M:%S') }}
+                    </div>
+                    <div class="flex flex-row space-x-2 items-end justify-end">
+                        <span class="text-4xl font-semibold">{{ item.value }}</span>
+                        <span class="text-base font-medium text-gray-600">mots / min</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div>
+        <h2 class="text-2xl leading-7 text-gray-900 mb-8">Ajouter manuellement</h1>
+        <form method="POST">
+                <div class="space-y-12 w-full">
+                
+                    <div class="border-b border-gray-900/10 flex flex-col space-y-12">
+                        
+                        <div>
+                            <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Valeur</label>
+                            <div>
+                                <input type="number" name="score" id="score" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                
+                    </div>
+                
+                </div>
+            
+                <div class="mt-6 flex items-center w-full gap-x-6">
+                    <button type="submit" class="rounded-md bg-darker px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-900 transition duration-100">Ajouter</button>
+                </div>
+            </form>
+    </div>
+</div>
+
+{% endblock content%}

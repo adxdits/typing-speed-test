@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="flex items-center justify-center h-full w-full flex-col space-y-32">
+        <h1 class="text-6xl font-medium leading-7 text-gray-900">Bienvenue {{user.username}} </h1>
+        <img src="{{ url_for('static', filename='flash.png') }}" class="w-64 h-auto">
+    </div>
+{% endblock %}
